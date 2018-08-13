@@ -1,10 +1,10 @@
 <template>
   <div class="home">
-    <v-layout>
-      <v-flex xs12 sm5 offset-sm3>
+    <v-layout row wrap>
+      <v-flex xs12 sm4 style="margin-top: 3px;">
         <v-card>
           <v-layout>
-            <v-flex xs5>
+            <v-flex xs5 id="weather">
               <v-card-media
                 :src="weatherimg"
                 height="25vh"
@@ -13,15 +13,69 @@
             </v-flex>
             <v-flex xs7>
               <v-card-title primary-title>
-                <div>
-                  <h2><span>{{today}}</span></h2>
-                  <h3><span>{{weekday}}</span></h3>
-                  <h3><span>{{todayweather}}</span></h3>
-                  <h3><span>{{aqi}}</span></h3>
-                </div>
+                <figure>
+                  <div>
+                    <h2><span>{{today}}</span></h2>
+                    <h3><span>{{weekday}}</span></h3>
+                    <h3><span>{{todayweather}}</span></h3>
+                    <h3><span>{{aqi}}</span></h3>
+                  </div>
+                </figure>
               </v-card-title>
             </v-flex>
           </v-layout>
+        </v-card>
+      </v-flex>
+      <v-flex d-flex xs12 sm4 style="margin-top: 3px;">
+        <v-card>
+          <figure class="echarts">
+            <chart
+              flex
+              :options='DrawSex'
+              ref='bar'
+              auto-resize
+              style="height: 30vh;"
+            />
+          </figure>
+        </v-card>
+      </v-flex>
+      <v-flex d-flex xs12 sm4 style="margin-top: 3px;">
+        <v-card>
+          <figure class="echarts">
+            <chart
+              flex
+              :options='DrawAge'
+              ref='pie'
+              auto-resize
+              style="height: 30vh;"
+            />
+          </figure>
+        </v-card>
+      </v-flex>
+      <v-flex d-flex xs12 sm12 style="margin-top: 3px;">
+        <v-card>
+          <figure class="echarts">
+            <chart
+              flex
+              :options='MetricDay'
+              ref='bar'
+              auto-resize
+              style="height: 30vh;"
+            />
+          </figure> 
+        </v-card>
+      </v-flex>
+      <v-flex d-flex xs12 sm12 style="margin-top: 3px;">
+        <v-card>
+          <figure class="echarts" style="height: 30vh">
+            <chart
+              flex
+              :options='CustomerDaily'
+              ref='line'
+              auto-resize
+              style="height: 30vh;"
+            />
+          </figure> 
         </v-card>
       </v-flex>
     </v-layout>
@@ -29,16 +83,28 @@
 </template>
 
 <script>
-import axios from 'axios';
+import Vue from 'vue'
+import axios from 'axios'
+import echarts from 'echarts'
+import drawAge from "assets/data/home/drawAge"
+import drawSex from "assets/data/home/drawSex"
+import salesMetricsDay from "assets/data/home/salesMetricsDay"
+import customerDaily from "assets/data/home/customerDaily"
+
+Vue.prototype.$echarts = echarts
 
 export default {
   data() {
     return {
       weatherimg: require('assets/weather/sunnycloud.png'),
-      aqi: '',
+      aqi: 'Loading...',
       today: 'Loading...',
       weekday: 'Loading...',
       todayweather: 'Loading...',
+      DrawAge: drawAge(),
+      DrawSex: drawSex(),
+      MetricDay: salesMetricsDay(),
+      CustomerDaily: customerDaily()
     }
   },
   methods: {
@@ -137,27 +203,4 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import '@/css/home.scss';
-.home {
-  margin-top: 0;
-}
-h2 {
-  font-size: 30px;
-  text-align: center;
-}
-h3 {
-  font-size: 25px;
-  text-align: center;
-  margin: 0px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
 </style>
