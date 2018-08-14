@@ -4,7 +4,7 @@
       <v-toolbar 
         flat color="primary" 
         dark 
-        height="50"s
+        height="50"
         clipped-left 
         app 
       >
@@ -31,7 +31,7 @@
           <v-list>
             <v-list-tile
               v-for="(item, i) in items"
-              :key="'mobile'+i"
+              :key="'mobile-'+i"
               @click.prevent="logout"
             >
               <v-list-tile-title>{{ item.title }}</v-list-tile-title>
@@ -73,7 +73,7 @@
               <v-list-tile
                 v-for="(admin, i) in admins"
                 :key="i"
-                @click=""
+                :to="{name: admin[2]}"
               >
                 <v-list-tile-title v-text="admin[0]"></v-list-tile-title>
               </v-list-tile>
@@ -106,39 +106,13 @@
               <v-list-tile-title>客户管理</v-list-tile-title>
             </v-list-tile>
             <v-list-tile
-              key="manageEmp"
-              @click=""
+              v-for="(customer, i) in customers"
+              :key="i"
+              :to="{name: customer[1]}"
             >
               <v-list-tile-action></v-list-tile-action>
               <v-list-tile-content>
-                <v-list-tile-title>人员管理</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-            <v-list-tile
-              key="IDpush"
-              @click=""
-            >
-              <v-list-tile-action></v-list-tile-action>
-              <v-list-tile-content>
-                <v-list-tile-title>识别推送</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-            <v-list-tile
-              key="snapshotReg"
-              @click=""
-            >
-              <v-list-tile-action></v-list-tile-action>
-              <v-list-tile-content>
-                <v-list-tile-title>抓拍注册</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-            <v-list-tile
-              key="customerIdList"
-              @click=""
-            >
-              <v-list-tile-action></v-list-tile-action>
-              <v-list-tile-content>
-                <v-list-tile-title>客户识别列表</v-list-tile-title>
+                <v-list-tile-title v-text="customer[0]"></v-list-tile-title>
               </v-list-tile-content>
             </v-list-tile>
           </v-list-group>
@@ -168,41 +142,15 @@
             </v-list-tile>
 
             <v-list-tile
-              key="areaManage"
-              @click=""
+              v-for="(system, i) in systems"
+              :key="i"
+              :to="{name: system[1]}"
             >
               <v-list-tile-action></v-list-tile-action>
               <v-list-tile-content>
-                <v-list-tile-title>区域管理</v-list-tile-title>
+                <v-list-tile-title v-text="system[0]"></v-list-tile-title>
               </v-list-tile-content>
-            </v-list-tile>   
-            <v-list-tile
-              key="faceGroup"
-              @click=""
-            >
-              <v-list-tile-action></v-list-tile-action>
-              <v-list-tile-content>
-                <v-list-tile-title>人脸库分组</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>   
-            <v-list-tile
-              key="tableSearchGroup"
-              @click=""
-            >
-              <v-list-tile-action></v-list-tile-action>
-              <v-list-tile-content>
-                <v-list-tile-title>报表查询分组</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>   
-            <v-list-tile
-              key="empManage"
-              @click=""
-            >
-              <v-list-tile-action></v-list-tile-action>
-              <v-list-tile-content>
-                <v-list-tile-title>职员管理</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>   
+            </v-list-tile>
           </v-list-group>
         </v-list>
       </v-navigation-drawer>
@@ -225,20 +173,32 @@ export default {
       return {
         drawer: true,
         admins: [
-        ['Management', 'people_outline'],
-        ['Settings', 'settings']
-      ],
-      cruds: [
-        ['Create', 'add'],
-        ['Read', 'insert_drive_file'],
-        ['Update', 'update'],
-        ['Delete', 'delete']
-      ],
-      items: [
-        { title: 'Click Me' },
-        { title: 'Click Me' },
-        { title: '登出' }
-      ]
+          ['会员分析日报表', 'people_outline', 'memberAnalysisDay'],
+          ['会员分析周报表', 'settings', 'memberAnalysisWeek']
+        ],
+        cruds: [
+          ['Create', 'add'],
+          ['Read', 'insert_drive_file'],
+          ['Update', 'update'],
+          ['Delete', 'delete']
+        ],
+        items: [
+          { title: 'Click Me' },
+          { title: 'Click Me' },
+          { title: '登出' }
+        ],
+        customers: [
+          ['人员管理', 'route01'],
+          ['识别推送', 'route02'],
+          ['抓拍注册', 'route03'],
+          ['客户识别列表', 'route04']
+        ],
+        systems: [
+          ['区域管理', 'route01'],
+          ['人脸库分组', 'route02'],
+          ['报表查询分组', 'route03'],
+          ['职员管理', 'route04']
+        ]
       }
     },
   methods: {
