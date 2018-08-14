@@ -4,13 +4,13 @@
       <v-toolbar 
         flat color="primary" 
         dark 
-        height="50"
+        height="50"s
         clipped-left 
         app 
       >
         <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
         <v-icon>shopping_cart</v-icon>
-        <v-toolbar-title>精品汇管理平台</v-toolbar-title>
+        <v-toolbar-title>晶品汇管理平台</v-toolbar-title>
         <v-spacer></v-spacer>
         <!--大螢幕才會出現-->
         <v-toolbar-items class="hidden-sm-and-down">
@@ -31,7 +31,7 @@
           <v-list>
             <v-list-tile
               v-for="(item, i) in items"
-              :key="i"
+              :key="'mobile'+i"
               @click.prevent="logout"
             >
               <v-list-tile-title>{{ item.title }}</v-list-tile-title>
@@ -67,7 +67,7 @@
               sub-group
             >
               <v-list-tile slot="activator">
-                <v-list-tile-title>Admin</v-list-tile-title>
+                <v-list-tile-title>会员分析报表</v-list-tile-title>
               </v-list-tile>
 
               <v-list-tile
@@ -84,7 +84,7 @@
               no-action
             >
               <v-list-tile slot="activator">
-                <v-list-tile-title>Actions</v-list-tile-title>
+                <v-list-tile-title>客流量分析报表</v-list-tile-title>
               </v-list-tile>
 
               <v-list-tile
@@ -98,8 +98,6 @@
                 </v-list-tile-action>
               </v-list-tile>
             </v-list-group>
-
-
           </v-list-group>
           <v-list-group
             prepend-icon="face"
@@ -107,96 +105,61 @@
             <v-list-tile slot="activator">
               <v-list-tile-title>客户管理</v-list-tile-title>
             </v-list-tile>
-
-            <v-list-group
-              no-action
-              sub-group
+            <v-list-tile
+              key="manageEmp"
+              @click=""
             >
-              <v-list-tile slot="activator">
-                <v-list-tile-title>Admin</v-list-tile-title>
-              </v-list-tile>
-
-              <v-list-tile
-                v-for="(admin, i) in admins"
-                :key="i"
-                @click=""
-              >
-                <v-list-tile-title v-text="admin[0]"></v-list-tile-title>
-                <v-list-tile-action>
-                  <v-icon v-text="admin[1]"></v-icon>
-                </v-list-tile-action>
-              </v-list-tile>
-            </v-list-group>
-
-            <v-list-group
-              sub-group
-              no-action
+              <v-list-tile-action></v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>人员管理</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+            <v-list-tile
+              key="IDpush"
+              @click=""
             >
-              <v-list-tile slot="activator">
-                <v-list-tile-title>Actions</v-list-tile-title>
-              </v-list-tile>
-
-              <v-list-tile
-                v-for="(crud, i) in cruds"
-                :key="i"
-                @click=""
-              >
-                <v-list-tile-title v-text="crud[0]"></v-list-tile-title>
-                <v-list-tile-action>
-                  <v-icon v-text="crud[1]"></v-icon>
-                </v-list-tile-action>
-              </v-list-tile>
-            </v-list-group>
+              <v-list-tile-action></v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>识别推送</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+            <v-list-tile
+              key="snapshotReg"
+              @click=""
+            >
+              <v-list-tile-action></v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>抓拍注册</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+            <v-list-tile
+              key="customerIdList"
+              @click=""
+            >
+              <v-list-tile-action></v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>客户识别列表</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
           </v-list-group>
+
           <v-list-group
             prepend-icon="videocam"
           >
             <v-list-tile slot="activator">
               <v-list-tile-title>设备管理</v-list-tile-title>
             </v-list-tile>
-
-            <v-list-group
-              no-action
-              sub-group
+            <v-list-tile
+              key="cameraManage"
+              @click=""
             >
-              <v-list-tile slot="activator">
-                <v-list-tile-title>Admin</v-list-tile-title>
-              </v-list-tile>
-
-              <v-list-tile
-                v-for="(admin, i) in admins"
-                :key="i"
-                @click=""
-              >
-                <v-list-tile-title v-text="admin[0]"></v-list-tile-title>
-                <v-list-tile-action>
-                  <v-icon v-text="admin[1]"></v-icon>
-                </v-list-tile-action>
-              </v-list-tile>
-            </v-list-group>
-
-            <v-list-group
-              sub-group
-              no-action
-            >
-              <v-list-tile slot="activator">
-                <v-list-tile-title>Actions</v-list-tile-title>
-              </v-list-tile>
-
-              <v-list-tile
-                v-for="(crud, i) in cruds"
-                :key="i"
-                @click=""
-              >
-                <v-list-tile-title v-text="crud[0]"></v-list-tile-title>
-                <v-list-tile-action>
-                  <v-icon v-text="crud[1]"></v-icon>
-                </v-list-tile-action>
-              </v-list-tile>
-            </v-list-group>
-
-            
+              <v-list-tile-action></v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>主机设备</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>   
           </v-list-group>
+
           <v-list-group
             prepend-icon="settings"
           >
@@ -204,45 +167,42 @@
               <v-list-tile-title>系统管理</v-list-tile-title>
             </v-list-tile>
 
-            <v-list-group
-              no-action
-              sub-group
+            <v-list-tile
+              key="areaManage"
+              @click=""
             >
-              <v-list-tile slot="activator">
-                <v-list-tile-title>Admin</v-list-tile-title>
-              </v-list-tile>
-
-              <v-list-tile
-                v-for="(admin, i) in admins"
-                :key="i"
-                @click=""
-              >
-                <v-list-tile-title v-text="admin[0]"></v-list-tile-title>
-                <v-list-tile-action>
-                  <v-icon v-text="admin[1]"></v-icon>
-                </v-list-tile-action>
-              </v-list-tile>
-            </v-list-group>
-
-            <v-list-group
-              sub-group
-              no-action
+              <v-list-tile-action></v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>区域管理</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>   
+            <v-list-tile
+              key="faceGroup"
+              @click=""
             >
-              <v-list-tile slot="activator">
-                <v-list-tile-title>Actions</v-list-tile-title>
-              </v-list-tile>
-
-              <v-list-tile
-                v-for="(crud, i) in cruds"
-                :key="i"
-                @click=""
-              >
-                <v-list-tile-title v-text="crud[0]"></v-list-tile-title>
-                <v-list-tile-action>
-                  <v-icon v-text="crud[1]"></v-icon>
-                </v-list-tile-action>
-              </v-list-tile>
-            </v-list-group>
+              <v-list-tile-action></v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>人脸库分组</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>   
+            <v-list-tile
+              key="tableSearchGroup"
+              @click=""
+            >
+              <v-list-tile-action></v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>报表查询分组</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>   
+            <v-list-tile
+              key="empManage"
+              @click=""
+            >
+              <v-list-tile-action></v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>职员管理</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>   
           </v-list-group>
         </v-list>
       </v-navigation-drawer>

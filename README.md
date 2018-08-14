@@ -1,21 +1,49 @@
 # jphmanage
 
-## Project setup
+本專案使用vue-cli3所建構
+## yarn安裝vue-cli3
+
+```
+yarn global add @vue/cli
+```
+
+## 創建新專案
+
+```
+vue create my-app
+```
+
+## 安裝vuetify（vue ui框架）
+
+```
+vue add vuetify
+```
+
+## 使用vuetify 
+```                                                    main.js
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
+
+Vue.use(Vuetify, {
+})
+```
+
+## 安裝相關依賴
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### 本地端測試 網址`localhost:8080`
 ```
-yarn run serve
+yarn serve
 ```
 
-### Compiles and minifies for production
+### 打包 （會產生dist資料夾，部署網站時需要）
 ```
-yarn run build
+yarn build
 ```
 
 ### Lints and fixes files
 ```
-yarn run lint
+yarn lint
 ```
