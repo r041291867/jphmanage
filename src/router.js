@@ -42,7 +42,7 @@ export default new Router({
     },
     { //讓不存在或錯誤的路由不會再是 404，自動導向回根路徑
       path: '*',
-      redirect: '/',
+      redirect: '/home',
     }
   ]
 })

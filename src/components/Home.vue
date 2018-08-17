@@ -86,10 +86,10 @@
 import Vue from 'vue'
 import axios from 'axios'
 import echarts from 'echarts'
-import drawAge from "assets/data/home/drawAge"
-import drawSex from "assets/data/home/drawSex"
-import salesMetricsDay from "assets/data/home/salesMetricsDay"
-import customerDaily from "assets/data/home/customerDaily"
+import drawAge from "components/data/home/drawAge"
+import drawSex from "components/data/home/drawSex"
+import salesMetricsDay from "components/data/home/salesMetricsDay"
+import customerDaily from "components/data/home/customerDaily"
 
 Vue.prototype.$echarts = echarts
 

@@ -13,7 +13,7 @@ yarn global add @vue/cli
 vue create my-app
 ```
 
-## 安裝vuetify（vue ui框架）
+## 安裝vuetify
 
 ```
 vue add vuetify
@@ -26,6 +26,13 @@ import 'vuetify/dist/vuetify.min.css'
 
 Vue.use(Vuetify, {
 })
+```
+
+## 使用webpack
+
+修改檔案儲存後，網頁會立即產生修改後的結果
+```
+vue add webpack
 ```
 
 ## 安裝相關依賴

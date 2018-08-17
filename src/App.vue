@@ -73,7 +73,7 @@
               <v-list-tile
                 v-for="(admin, i) in admins"
                 :key="i"
-                :to="{name: admin[2]}"
+                :to="{name: admin[1]}"
               >
                 <v-list-tile-title v-text="admin[0]"></v-list-tile-title>
               </v-list-tile>
@@ -88,14 +88,11 @@
               </v-list-tile>
 
               <v-list-tile
-                v-for="(crud, i) in cruds"
+                v-for="(kll, i) in klls"
                 :key="i"
-                @click=""
+                :to="{name: kll[1]}"
               >
-                <v-list-tile-title v-text="crud[0]"></v-list-tile-title>
-                <v-list-tile-action>
-                  <v-icon v-text="crud[1]"></v-icon>
-                </v-list-tile-action>
+                <v-list-tile-title v-text="kll[0]"></v-list-tile-title>
               </v-list-tile>
             </v-list-group>
           </v-list-group>
@@ -125,7 +122,6 @@
             </v-list-tile>
             <v-list-tile
               key="cameraManage"
-              @click=""
             >
               <v-list-tile-action></v-list-tile-action>
               <v-list-tile-content>
@@ -172,27 +168,33 @@ export default {
   data () {
       return {
         drawer: true,
+        //會員分析報表
         admins: [
-          ['会员分析日报表', 'people_outline', 'memberAnalysisDay'],
-          ['会员分析周报表', 'settings', 'memberAnalysisWeek']
+          ['会员分析日报表', 'memberAnalysisDay'],
+          ['会员分析周报表', 'memberAnalysisWeek'],
+          ['会员分析月报表', 'memberAnalysisMonth'],
         ],
-        cruds: [
-          ['Create', 'add'],
-          ['Read', 'insert_drive_file'],
-          ['Update', 'update'],
-          ['Delete', 'delete']
+        //客流量分析報表
+        klls: [
+          ['客流时报表', 'KLLAnalysisHour'],
+          ['客流日报表', 'KLLAnalysisDay'],
+          ['客流周报表', 'KLLAnalysisWeek'],
+          ['客流月报表', 'KLLAnalysisMonth']
         ],
+        //手機模式右上角按鍵
         items: [
           { title: 'Click Me' },
           { title: 'Click Me' },
           { title: '登出' }
         ],
+        //客戶管理
         customers: [
           ['人员管理', 'route01'],
           ['识别推送', 'route02'],
           ['抓拍注册', 'route03'],
           ['客户识别列表', 'route04']
         ],
+        //系統管理
         systems: [
           ['区域管理', 'route01'],
           ['人脸库分组', 'route02'],
