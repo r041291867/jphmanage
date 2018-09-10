@@ -90,6 +90,7 @@ import drawAge from "components/data/home/drawAge"
 import drawSex from "components/data/home/drawSex"
 import salesMetricsDay from "components/data/home/salesMetricsDay"
 import customerDaily from "components/data/home/customerDaily"
+import customData from "assets/customData/weather.json"
 
 Vue.prototype.$echarts = echarts
 
@@ -115,8 +116,9 @@ export default {
           return "0"+num;
         } else return num;
       }
-      return axios.get("http://edudata.foxconn.com/ConvenienceStore/weatherToday?date="+day)
+      return axios.get("/api/weatherToday?date="+day)
         .then(response => response.data)
+        .catch((err) => customData);
     },
   },
   mounted() {

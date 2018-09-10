@@ -176,10 +176,10 @@ export default {
         ],
         //客流量分析報表
         klls: [
-          ['客流时报表', 'KLLAnalysisHour'],
-          ['客流日报表', 'KLLAnalysisDay'],
-          ['客流周报表', 'KLLAnalysisWeek'],
-          ['客流月报表', 'KLLAnalysisMonth']
+          ['客流时报表', 'customerReportHourly'],
+          ['客流日报表', 'customerReportDay'],
+          ['客流周报表', 'customerReportWeek'],
+          ['客流月报表', 'customerReportMonth']
         ],
         //手機模式右上角按鍵
         items: [

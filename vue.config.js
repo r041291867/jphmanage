@@ -6,12 +6,16 @@ function resolve (dir) {
 module.exports = {
   //baseUrl: "./",
   devServer: {
-    /*proxy: {
-      "/home": {
-        target: "http://localhost:8080/home",
-      },
-      changeOrigin: true
-    }*/
+    proxy: {
+      "/api": {
+        target: "http://edudata.foxconn.com/ConvenienceStore/",
+        ws: true,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api' : ''
+        }
+      }
+    }
   },
 	configureWebpack: {
     resolve: {
