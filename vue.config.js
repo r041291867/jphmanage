@@ -4,7 +4,7 @@ function resolve (dir) {
 }
 
 module.exports = {
-  //baseUrl: "./",
+  baseUrl: "./",
   devServer: {
     proxy: {
       "/api": {

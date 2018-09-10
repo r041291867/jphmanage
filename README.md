@@ -1,6 +1,6 @@
 # jphmanage
 
-本專案使用vue-cli3所建構
+本專案使用vue-cli3所建構 [Demo](https://r041291867.github.io/jphmanage/)
 ## yarn安裝vue-cli3
 
 ```
