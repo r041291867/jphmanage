@@ -49,7 +49,7 @@
         app
       >
         <v-list>
-          <v-list-tile to="/home">
+          <v-list-tile to="/jphadmin">
             <v-list-tile-action>
               <v-icon>home</v-icon>
             </v-list-tile-action>

@@ -118,7 +118,7 @@ export default {
       }
       return axios.get("/api/weatherToday?date="+day)
         .then(response => response.data)
-        .catch((err) => customData);
+        .catch((err) => customData);     //api故障時會呈現預設好的資料
     },
   },
   mounted() {

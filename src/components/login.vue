@@ -41,7 +41,7 @@ import { Toast } from 'mint-ui';
         if( this.userName == 'jphadmin' && this.password == '123456' ){
           localStorage.setItem('token', 'ImLogin')
           Toast('登录成功！');
-          this.$router.push('/home');
+          this.$router.push('/jphadmin');
         } else{
           Toast('账号或密码错误！');
         }
