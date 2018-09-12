@@ -14,9 +14,9 @@
         <v-spacer></v-spacer>
         <!--大螢幕才會出現-->
         <v-toolbar-items class="hidden-sm-and-down">
-          <v-btn flat>Link One</v-btn>
-          <v-btn flat>Link Two</v-btn>
-          <v-btn flat @click.prevent="logout"><v-icon>power_settings_new</v-icon>登出</v-btn>
+          <v-btn flat><v-icon>perm_identity</v-icon>Link One</v-btn>
+          <v-btn flat><v-icon>star_border</v-icon>品牌</v-btn>
+          <v-btn flat @click.prevent="logout"><v-icon>power_settings_new</v-icon>注销</v-btn>
         </v-toolbar-items>
         <!--小螢幕才會出現-->
         <v-menu bottom left transition="slide-y-transition" class="hidden-sm-and-up">
@@ -34,7 +34,7 @@
               :key="'mobile-'+i"
               @click.prevent="logout"
             >
-              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+              <v-list-tile-title><v-icon>{{ item.icon }}</v-icon>{{ item.title }}</v-list-tile-title>
             </v-list-tile>
           </v-list>
         </v-menu>
@@ -183,9 +183,9 @@ export default {
         ],
         //手機模式右上角按鍵
         items: [
-          { title: 'Click Me' },
-          { title: 'Click Me' },
-          { title: '登出' }
+          { title: 'Click Me', icon: 'perm_identity' },
+          { title: '品牌', icon: 'star_border' },
+          { title: '注销', icon: 'power_settings_new' }
         ],
         //客戶管理
         customers: [
