@@ -17,7 +17,7 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/',
+      path: '/jphmanage',
       components: {
         default: Home,
         nav: Header
@@ -25,6 +25,7 @@ export default new Router({
     },
     {
       path: '/home',
+      alias: '/jphmanage',
       name: 'home',
       component: Home
     },
@@ -65,7 +66,7 @@ export default new Router({
     },
     { //讓不存在或錯誤的路由不會再是 404，自動導向回根路徑
       path: '*',
-      redirect: '/home',
+      redirect: '/jphmanage',
     }
   ]
 })
