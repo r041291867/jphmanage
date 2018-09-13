@@ -1,0 +1,93 @@
+[
+	{
+		"Datetime": "2018-07-29",
+		"femalesage1": 2,
+		"femalesage2": 726,
+		"femalesage3": 197,
+		"femalesage4": 134,
+		"femalesage5": 69,
+		"malesage1": 3,
+		"malesage2": 2255,
+		"malesage3": 1139,
+		"malesage4": 229,
+		"malesage5": 127
+	},
+	{
+		"Datetime": "2018-07-30",
+		"femalesage1": 9,
+		"femalesage2": 2014,
+		"femalesage3": 635,
+		"femalesage4": 367,
+		"femalesage5": 190,
+		"malesage1": 9,
+		"malesage2": 5100,
+		"malesage3": 3290,
+		"malesage4": 857,
+		"malesage5": 409
+	},
+	{
+		"Datetime": "2018-07-31",
+		"femalesage1": 15,
+		"femalesage2": 2271,
+		"femalesage3": 705,
+		"femalesage4": 395,
+		"femalesage5": 215,
+		"malesage1": 10,
+		"malesage2": 5826,
+		"malesage3": 3516,
+		"malesage4": 923,
+		"malesage5": 439
+	},
+	{
+		"Datetime": "2018-08-01",
+		"femalesage1": 18,
+		"femalesage2": 2318,
+		"femalesage3": 671,
+		"femalesage4": 435,
+		"femalesage5": 193,
+		"malesage1": 7,
+		"malesage2": 5927,
+		"malesage3": 3631,
+		"malesage4": 1003,
+		"malesage5": 445
+	},
+	{
+		"Datetime": "2018-08-02",
+		"femalesage1": 18,
+		"femalesage2": 2256,
+		"femalesage3": 704,
+		"femalesage4": 417,
+		"femalesage5": 188,
+		"malesage1": 9,
+		"malesage2": 5823,
+		"malesage3": 3610,
+		"malesage4": 994,
+		"malesage5": 451
+	},
+	{
+		"Datetime": "2018-08-03",
+		"femalesage1": 16,
+		"femalesage2": 2348,
+		"femalesage3": 715,
+		"femalesage4": 420,
+		"femalesage5": 188,
+		"malesage1": 9,
+		"malesage2": 5931,
+		"malesage3": 3662,
+		"malesage4": 1011,
+		"malesage5": 404
+	},
+	{
+		"Datetime": "2018-08-04",
+		"femalesage1": 18,
+		"femalesage2": 2068,
+		"femalesage3": 556,
+		"femalesage4": 353,
+		"femalesage5": 175,
+		"malesage1": 12,
+		"malesage2": 5539,
+		"malesage3": 3437,
+		"malesage4": 888,
+		"malesage5": 434
+	}
+]

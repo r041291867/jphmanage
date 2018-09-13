@@ -65,16 +65,22 @@ import customData from 'assets/customData/customerReportHourly.json'
 var res = customData, customDay = []       //導入預設資料及計算本頁面所需資料
 //計算性別
 var male = [], female = [], customerAll = []
+var malesAll = 0,femalesAll = 0
 
 for (let i in res) {
 	male[i]=res[i].malesage1+res[i].malesage2+res[i].malesage3+res[i].malesage4+res[i].malesage5
 	female[i]=res[i].femalesage1+res[i].femalesage2+res[i].femalesage3+res[i].femalesage4+res[i].femalesage5
 }
-var malesAll = 0,femalesAll = 0
+//Datetime轉換
+var date = new Date(res[0].BeginDatetime)
+var Y = date.getFullYear() + '-';					//year
+var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';    //month
+var D = (date.getDate() < 10 ? '0'+date.getDate() : date.getDate())      //day
+
 for (let i in male) malesAll+=male[i]
 for (let i in female) femalesAll+=female[i]
 customDay.push({
-	times: '2018-09-11',
+	times: Y+M+D,
 	customersAll: malesAll+femalesAll,
 	males: malesAll,
 	females: femalesAll
