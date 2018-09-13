@@ -18,6 +18,7 @@
 								<td class="text-xs-center">{{ props.item.customersAll }}</td>
 								<td class="text-xs-center">{{ props.item.males }}</td>
 								<td class="text-xs-center">{{ props.item.females }}</td>
+								<td class="text-xs-center">{{ props.item.average }}</td>
 							</template>
 						</v-data-table>	
 					</v-card-text>
@@ -65,19 +66,27 @@ import customData from 'assets/customData/customerReportWeek.json'
 var res = customData, customDay = []       //導入預設資料及計算本頁面所需資料
 //計算性別
 var male = [], female = [], customerAll = []
+var customerAVG = 0
 
 for (let i in res) {
 	male[i]=res[i].malesage1+res[i].malesage2+res[i].malesage3+res[i].malesage4+res[i].malesage5
 	female[i]=res[i].femalesage1+res[i].femalesage2+res[i].femalesage3+res[i].femalesage4+res[i].femalesage5
 }
+
+
+
 var malesAll = 0,femalesAll = 0
 for (let i in male) malesAll+=male[i]
 for (let i in female) femalesAll+=female[i]
+
+customerAVG = Math.round((malesAll+femalesAll)/res.length)
+
 customDay.push({
 	times: res[0].Datetime + " ~ " + res[res.length-1].Datetime,
 	customersAll: malesAll+femalesAll,
 	males: malesAll,
-	females: femalesAll
+	females: femalesAll,
+	average: customerAVG
 })
 
 //計算年齡
@@ -110,6 +119,7 @@ export default {
 				{ text: '来客人数', align: 'center', sortable: false, value: this.customersAll },
 				{ text: '男', align: 'center', sortable: false, value: this.males },
 				{ text: '女', align: 'center', sortable: false, value: this.females },
+				{ text: '平均来客人数', align: 'center', sortable: false, value: this.average }
 			],
 			customDay,customerAll,malesAll,femalesAll,
 			age1,age2,age3,age4,age5,

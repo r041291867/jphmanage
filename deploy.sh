@@ -1,6 +1,6 @@
 echo '=========Deploy to Github Start========='
 
-echo 'Delete old page...'
+echo 'Deleting old page...'
 git branch -D gh-pages
 
 git push origin :gh-pages
@@ -8,7 +8,7 @@ git push origin :gh-pages
 echo 'Building...'
 yarn build
 
-echo 'Create new page...'
+echo '\nCreating new page...'
 git checkout -b gh-pages
 
 git add -f dist
@@ -19,5 +19,5 @@ git subtree push --prefix dist origin gh-pages
 
 echo '=========Deploy to Github Finished========='
 
-echo 'Switch branch to master'
+echo '\nSwitching branch to master...'
 git checkout master
