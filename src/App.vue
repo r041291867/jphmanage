@@ -11,6 +11,13 @@
         <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
         <v-icon>shopping_cart</v-icon>
         <v-toolbar-title>晶品汇管理平台</v-toolbar-title>
+        <v-divider
+          class="mx-3"
+          inset
+          vertical
+        ></v-divider>
+        <span class="subheading">{{ this.$route.name }}</span> 
+        
         <v-spacer></v-spacer>
         <!--大螢幕才會出現-->
         <v-toolbar-items class="hidden-sm-and-down">
@@ -49,7 +56,7 @@
         app
       >
         <v-list>
-          <v-list-tile to="/jphadmin">
+          <v-list-tile to="/home">
             <v-list-tile-action>
               <v-icon>home</v-icon>
             </v-list-tile-action>
@@ -73,9 +80,9 @@
               <v-list-tile
                 v-for="(admin, i) in admins"
                 :key="i"
-                :to="{name: admin[1]}"
+                :to="{name: admin.title}"
               >
-                <v-list-tile-title v-text="admin[0]"></v-list-tile-title>
+                <v-list-tile-title v-text="admin.title"></v-list-tile-title>
               </v-list-tile>
             </v-list-group>
 
@@ -90,9 +97,9 @@
               <v-list-tile
                 v-for="(kll, i) in klls"
                 :key="i"
-                :to="{name: kll[1]}"
+                :to="{name: kll.title}"
               >
-                <v-list-tile-title v-text="kll[0]"></v-list-tile-title>
+                <v-list-tile-title v-text="kll.title"></v-list-tile-title>
               </v-list-tile>
             </v-list-group>
           </v-list-group>
@@ -105,11 +112,11 @@
             <v-list-tile
               v-for="(customer, i) in customers"
               :key="i"
-              :to="{name: customer[1]}"
+              :to="{name: customer.title}"
             >
               <v-list-tile-action></v-list-tile-action>
               <v-list-tile-content>
-                <v-list-tile-title v-text="customer[0]"></v-list-tile-title>
+                <v-list-tile-title v-text="customer.title"></v-list-tile-title>
               </v-list-tile-content>
             </v-list-tile>
           </v-list-group>
@@ -140,11 +147,11 @@
             <v-list-tile
               v-for="(system, i) in systems"
               :key="i"
-              :to="{name: system[1]}"
+              :to="{name: system.title}"
             >
               <v-list-tile-action></v-list-tile-action>
               <v-list-tile-content>
-                <v-list-tile-title v-text="system[0]"></v-list-tile-title>
+                <v-list-tile-title v-text="system.title"></v-list-tile-title>
               </v-list-tile-content>
             </v-list-tile>
           </v-list-group>
@@ -170,16 +177,16 @@ export default {
         drawer: true,
         //會員分析報表
         admins: [
-          ['会员分析日报表', 'memberAnalysisDay'],
-          ['会员分析周报表', 'memberAnalysisWeek'],
-          ['会员分析月报表', 'memberAnalysisMonth'],
+          { title: '会员分析日报表' },
+          { title: '会员分析周报表' },
+          { title: '会员分析月报表' }
         ],
         //客流量分析報表
         klls: [
-          ['客流时报表', 'customerReportHourly'],
-          ['客流日报表', 'customerReportDay'],
-          ['客流周报表', 'customerReportWeek'],
-          ['客流月报表', 'customerReportMonth']
+          { title: '客流时报表' },
+          { title: '客流日报表' },
+          { title: '客流周报表' },
+          { title: '客流月报表' }
         ],
         //手機模式右上角按鍵
         items: [
@@ -189,17 +196,17 @@ export default {
         ],
         //客戶管理
         customers: [
-          ['人员管理', 'route01'],
-          ['识别推送', 'route02'],
-          ['抓拍注册', 'route03'],
-          ['客户识别列表', 'route04']
+          { title: '人员管理' },
+          { title: '识别推送' },
+          { title: '抓拍注册' },
+          { title: '客户识别列表' }
         ],
         //系統管理
         systems: [
-          ['区域管理', 'route01'],
-          ['人脸库分组', 'route02'],
-          ['报表查询分组', 'route03'],
-          ['职员管理', 'route04']
+          { title: '区域管理' },
+          { title: '人脸库分组' },
+          { title: '报表查询分组' },
+          { title: '职员管理' }
         ]
       }
     },

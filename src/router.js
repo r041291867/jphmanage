@@ -14,10 +14,11 @@ import customerReportMonth from 'components/customerReportMonth.vue'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  //mode: 'history',   //需要後端支持
   routes: [
     {
-      path: '/jphmanage',
+      path: '/',
+
       components: {
         default: Home,
         nav: Header
@@ -26,42 +27,42 @@ export default new Router({
     {
       path: '/home',
       alias: '/jphmanage',
-      name: 'home',
+      name: '首页',
       component: Home
     },
     {
       path: '/login',
-      name: 'Login',
+      name: '登陆',
       component: Login
     },
     {
       path: '/memberAnalysisDay',
-      name: 'memberAnalysisDay',
+      name: '会员分析日报表',
       component: memberAnalysisDay
     },
     {
       path: '/memberAnalysisWeek',
-      name: 'memberAnalysisWeek',
+      name: '会员分析周报表',
       component: memberAnalysisWeek
     },
     {
       path: '/customerReportHourly',
-      name: 'customerReportHourly',
+      name: '客流时报表',
       component: customerReportHourly
     },
     {
       path: '/customerReportDay',
-      name: 'customerReportDay',
+      name: '客流日报表',
       component: customerReportDay
     },
     {
       path: '/customerReportWeek',
-      name: 'customerReportWeek',
+      name: '客流周报表',
       component: customerReportWeek
     },
     {
       path: '/customerReportMonth',
-      name: 'customerReportMonth',
+      name: '客流月报表',
       component: customerReportMonth
     },
     { //讓不存在或錯誤的路由不會再是 404，自動導向回根路徑

@@ -4,9 +4,6 @@
 			<v-flex d-flex xs12>
 				<v-card class="elevation-0">
 					<v-card-text>
-						<v-toolbar color="primary" dark flat>
-							<v-toolbar-title>客流日报表</v-toolbar-title>
-						</v-toolbar>
 						<v-data-table
 							:headers="headers"
 							:items="customDay"
