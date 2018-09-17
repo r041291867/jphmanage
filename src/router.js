@@ -6,10 +6,10 @@ import Home from 'components/Home.vue'
 import Header from 'components/Header.vue'
 import memberAnalysisDay from 'components/memberAnalysisDay.vue'
 import memberAnalysisWeek from 'components/memberAnalysisWeek.vue'
-import customerReportHourly from 'components/customerReportHourly.vue'
-import customerReportDay from 'components/customerReportDay.vue'
-import customerReportWeek from 'components/customerReportWeek.vue'
-import customerReportMonth from 'components/customerReportMonth.vue'
+import customerReportHourly from 'components/customerReport/customerReportHourly.vue'
+import customerReportDay from 'components/customerReport/customerReportDay.vue'
+import customerReportWeek from 'components/customerReport/customerReportWeek.vue'
+import customerReportMonth from 'components/customerReport/customerReportMonth.vue'
 
 Vue.use(Router)
 

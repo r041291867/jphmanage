@@ -52,6 +52,7 @@
           </figure>
         </v-card>
       </v-flex>
+      <github-corner style="position: absolute; top: 0px; border: 0; right: 0;"/>
       <v-flex d-flex xs12 sm12 style="margin-top: 3px;">
         <v-card>
           <figure class="echarts">
@@ -91,10 +92,14 @@ import drawSex from "components/data/home/drawSex"
 import salesMetricsDay from "components/data/home/salesMetricsDay"
 import customerDaily from "components/data/home/customerDaily"
 import customData from "assets/customData/weather.json"
+import GithubCorner from "./GithubCorner"
 
 Vue.prototype.$echarts = echarts
 
 export default {
+  components: {
+    GithubCorner,
+  },
   data() {
     return {
       weatherimg: require('assets/weather/sunnycloud.png'),

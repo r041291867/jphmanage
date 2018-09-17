@@ -35,7 +35,7 @@ export default function drawAge() {
     },
     legend: {
       orient : 'vertical',
-      x : 'right',
+      x : 'left',
       data:['0~18岁','19~30岁','31~40岁','41~~50岁','>51岁']
     },
     calculable : true,

@@ -138,7 +138,7 @@ export default {
 		handleDownload() { 
 			//require.ensure([], () => { // 用 webpack Code Splitting xlsl还是很大的
 			import('@/vendor/Export2Excel').then(excel => {
-				const { export_json_to_excel } = require('../vendor/Export2Excel');
+				const { export_json_to_excel } = require('../../vendor/Export2Excel');
 				const tHeader = ['时间', '来客人数', '男', '女']; // excel 表格头
 				const filterVal = ['times', 'customersAll', 'males', 'females'];
 				const list = this.customDay;
