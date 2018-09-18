@@ -55,28 +55,24 @@
       <github-corner style="position: absolute; top: 0px; border: 0; right: 0;"/>
       <v-flex d-flex xs12 sm12 style="margin-top: 3px;">
         <v-card>
-          <figure class="echarts">
-            <chart
-              flex
-              :options='MetricDay'
-              ref='bar'
-              auto-resize
-              style="height: 30vh;"
-            />
-          </figure> 
+          <chart
+            flex
+            :options='CustomerDaily'
+            ref='bar'
+            auto-resize
+            style="height: 30vh;  width: 100%"
+          />          
         </v-card>
       </v-flex>
       <v-flex d-flex xs12 sm12 style="margin-top: 3px;">
         <v-card>
-          <figure class="echarts" style="height: 30vh">
-            <chart
-              flex
-              :options='CustomerDaily'
-              ref='line'
-              auto-resize
-              style="height: 30vh;"
-            />
-          </figure> 
+          <chart
+            flex
+            :options='CustomerWeek'
+            ref='line'
+            auto-resize
+            style="height: 30vh; width: 100%"
+          />
         </v-card>
       </v-flex>
     </v-layout>
@@ -91,6 +87,7 @@ import drawAge from "components/data/home/drawAge"
 import drawSex from "components/data/home/drawSex"
 import salesMetricsDay from "components/data/home/salesMetricsDay"
 import customerDaily from "components/data/home/customerDaily"
+import customerWeek from "components/data/home/customerWeek"
 import customData from "assets/customData/weather.json"
 import GithubCorner from "./GithubCorner"
 
@@ -110,10 +107,12 @@ export default {
       DrawAge: drawAge(),
       DrawSex: drawSex(),
       MetricDay: salesMetricsDay(),
-      CustomerDaily: customerDaily()
+      CustomerDaily: customerDaily(),
+      CustomerWeek: customerWeek()
     }
   },
   methods: {
+    /* eslint-disable */
     gettodayweather: () => {
       var day = new Date().getFullYear()+"-"+less10(new Date().getMonth()+1)+"-"+less10(new Date().getDate());
       function less10(num) {
@@ -125,6 +124,7 @@ export default {
         .then(response => response.data)
         .catch((err) => customData);     //api故障時會呈現預設好的資料
     },
+    /* eslint-enable */
   },
   mounted() {
     var vm = this;

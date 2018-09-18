@@ -95,7 +95,7 @@
 
           <v-list>
             <v-list-tile
-              :key="mobile-1"
+              :key="'mobile-1'"
               @click="dialog_user = true"
             >
               <v-list-tile-title><v-icon>perm_identity</v-icon>User</v-list-tile-title>
@@ -130,7 +130,7 @@
               </v-card>
             </v-dialog>
             <v-list-tile
-              :key="mobile-2"
+              :key="'mobile-2'"
               @click="dialog_brand = true"
             >
               <v-list-tile-title><v-icon>star_border</v-icon>品牌</v-list-tile-title>
@@ -165,7 +165,7 @@
               </v-card>
             </v-dialog>
             <v-list-tile
-              :key="mobile-3"
+              :key="'mobile-3'"
               @click.prevent="logout"
             >
               <v-list-tile-title><v-icon>power_settings_new</v-icon>注销</v-list-tile-title>

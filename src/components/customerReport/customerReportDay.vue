@@ -55,7 +55,7 @@
 <script>
 //import Vue from 'vue'
 //import axios from 'axios'
-import echarts from 'echarts'
+//import echarts from 'echarts'
 import ECharts from "vue-echarts/components/ECharts";
 import customData from 'assets/customData/customerReportHourly.json'
 

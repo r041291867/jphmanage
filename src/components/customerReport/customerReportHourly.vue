@@ -42,13 +42,13 @@
 <script>
 //import Vue from 'vue'
 //import axios from 'axios'
-import echarts from 'echarts'
+//import echarts from 'echarts'
 import ECharts from "vue-echarts/components/ECharts";
 import customData from 'assets/customData/customerReportHourly.json'
 
-//import 'script-loader!file-saver'; //保存文件用
-//import 'script-loader!@/vendor/Blob'; //转二进制用
-//import 'script-loader!xlsx/dist/xlsx.core.min'; //xlsx核心
+import 'script-loader!file-saver'; //保存文件用
+import 'script-loader!@/vendor/Blob'; //转二进制用
+import 'script-loader!xlsx/dist/xlsx.core.min'; //xlsx核心
 
 var res = customData, customDay = []       //導入預設資料及計算本頁面所需資料
 var male = [], female = [], customerAll = []
@@ -119,7 +119,7 @@ export default {
 						type:'bar',
 						stack: '总人数',
 						itemStyle:{
-              normal:{color:'#1e88e5'}
+              normal:{color:'#03a9f4'}
             },
 						data: male
 					},
@@ -128,7 +128,7 @@ export default {
 						type:'bar',
 						stack: '总人数',
 						itemStyle:{
-              normal:{color:'#e53935'}
+              normal:{color:'#e57373'}
             },
 						data: female
 					},
@@ -136,28 +136,19 @@ export default {
 			}
 		},
 		handleDownload() { 
-			//require.ensure([], () => { // 用 webpack Code Splitting xlsl还是很大的
-			import('@/vendor/Export2Excel').then(excel => {
-				const { export_json_to_excel } = require('../../vendor/Export2Excel');
+			require.ensure([], () => { // 用 webpack Code Splitting xlsl还是很大的
+			//import('@/vendor/Export2Excel').then(excel => {
+				const { export_json_to_excel } = require('@/vendor/Export2Excel');
 				const tHeader = ['时间', '来客人数', '男', '女']; // excel 表格头
 				const filterVal = ['times', 'customersAll', 'males', 'females'];
 				const list = this.customDay;
 				const data = this.formatJson(filterVal, list); // 自行洗数据 按序排序的一个array数组
 				export_json_to_excel(tHeader, data, '客流时报表');
 			})
-		},/*
+		},
 		formatJson(filterVal, jsonData) {
 			return jsonData.map(v => filterVal.map(j => v[j]))
-		}*/
-		formatJson(filterVal, jsonData) {
-      return jsonData.map(v => filterVal.map(j => {
-        if (j === 'timestamp') {
-          return parseTime(v[j])
-        } else {
-          return v[j]
-        }
-      }))
-    }
+		}
 
 	}
 }
