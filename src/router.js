@@ -10,6 +10,7 @@ import customerReportHourly from 'components/customerReport/customerReportHourly
 import customerReportDay from 'components/customerReport/customerReportDay.vue'
 import customerReportWeek from 'components/customerReport/customerReportWeek.vue'
 import customerReportMonth from 'components/customerReport/customerReportMonth.vue'
+import search from 'components/Search.vue'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/login',
       name: '登陆',
       component: Login
+    },
+    {
+      path: '/search',
+      name: '搜索',
+      component: search
     },
     {
       path: '/memberAnalysisDay',

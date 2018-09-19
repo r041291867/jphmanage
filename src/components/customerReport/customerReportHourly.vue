@@ -4,6 +4,9 @@
 			<v-flex d-flex xs12>
 				<v-card class="elevation-0">
 					<v-card-text>
+						<v-flex xs4 sm2 md1 offset-xs8 offset-sm10 offset-md11>
+							<v-btn flat color="green darken-2" @click="handleDownload">汇出excel</v-btn>
+						</v-flex>
 						<v-data-table
 							:headers="headers"
 							:items="customDay"
@@ -35,7 +38,6 @@
 				</v-card>
 			</v-flex>
 		</v-layout>
-		<v-btn @click="handleDownload">click</v-btn>
 	</div>
 </template>
 

@@ -55,24 +55,28 @@
       <github-corner style="position: absolute; top: 0px; border: 0; right: 0;"/>
       <v-flex d-flex xs12 sm12 style="margin-top: 3px;">
         <v-card>
-          <chart
-            flex
-            :options='CustomerDaily'
-            ref='bar'
-            auto-resize
-            style="height: 30vh;  width: 100%"
-          />          
+          <v-card-text>
+            <chart
+              flex
+              :options='CustomerDaily'
+              ref='bar'
+              auto-resize
+              style="height: 30vh;  width: 100%"
+            />
+          </v-card-text>          
         </v-card>
       </v-flex>
       <v-flex d-flex xs12 sm12 style="margin-top: 3px;">
         <v-card>
-          <chart
-            flex
-            :options='CustomerWeek'
-            ref='line'
-            auto-resize
-            style="height: 30vh; width: 100%"
-          />
+          <v-card-text>
+            <chart
+              flex
+              :options='CustomerWeek'
+              ref='line'
+              auto-resize
+              style="height: 30vh; width: 100%"
+            />
+          </v-card-text>
         </v-card>
       </v-flex>
     </v-layout>
@@ -87,6 +91,7 @@ import drawAge from "components/data/home/drawAge"
 import drawSex from "components/data/home/drawSex"
 import salesMetricsDay from "components/data/home/salesMetricsDay"
 import customerDaily from "components/data/home/customerDaily"
+import customerSum from "components/data/home/customerSum"
 import customerWeek from "components/data/home/customerWeek"
 import customData from "assets/customData/weather.json"
 import GithubCorner from "./GithubCorner"
@@ -108,6 +113,7 @@ export default {
       DrawSex: drawSex(),
       MetricDay: salesMetricsDay(),
       CustomerDaily: customerDaily(),
+      CustomerSum: customerSum(),
       CustomerWeek: customerWeek()
     }
   },
