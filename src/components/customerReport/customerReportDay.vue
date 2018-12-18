@@ -194,7 +194,7 @@ export default {
 								normal : {
 									color: function (params) {
 										var colorList = [
-											'#1e88e5','#e53935','#fbc02d','#4caf50','#ba68c8'
+											'#1e88e5','#e53935','#fbc02d','#66bb6a','#ba68c8'
 										]
 										return colorList[params.dataIndex]
 									},

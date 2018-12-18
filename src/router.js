@@ -4,8 +4,9 @@ import Login from 'components/login.vue'
 //import DayInfo from './views/DayInfo.vue'
 import Home from 'components/Home.vue'
 import Header from 'components/Header.vue'
-import memberAnalysisDay from 'components/memberAnalysisDay.vue'
-import memberAnalysisWeek from 'components/memberAnalysisWeek.vue'
+import memberAnalysisDay from 'components/memberAnalysis/memberAnalysisDay.vue'
+import memberAnalysisWeek from 'components/memberAnalysis/memberAnalysisWeek.vue'
+import memberAnalysisMonth from 'components/memberAnalysis/memberAnalysisMonth.vue'
 import customerReportHourly from 'components/customerReport/customerReportHourly.vue'
 import customerReportDay from 'components/customerReport/customerReportDay.vue'
 import customerReportWeek from 'components/customerReport/customerReportWeek.vue'
@@ -50,6 +51,11 @@ export default new Router({
       path: '/memberAnalysisWeek',
       name: '会员分析周报表',
       component: memberAnalysisWeek
+    },
+    {
+      path: '/memberAnalysisMonth',
+      name: '会员分析月报表',
+      component: memberAnalysisMonth
     },
     {
       path: '/customerReportHourly',

@@ -56,7 +56,7 @@
       <v-flex d-flex xs12 sm4 style="margin-top: 3px;">
         <v-card>
           <v-card-text class="kll">
-            <h3>今日客流统计</h3>
+            <h3>本日客流统计</h3>
             <h1 style="font-size: 5em; line-height:20vh;">{{CustomerSum}}</h1> 
           </v-card-text>          
         </v-card>
