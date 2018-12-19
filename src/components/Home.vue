@@ -191,7 +191,7 @@ export default {
           break;
       }
       var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-      var b = new Date(Date.parse(value[0].Date.replace(/\-/g,"/")));  //計算該日期是星期幾
+      var b = new Date(Date.parse(value[0].Date.replace(/-/g,"/")));  //計算該日期是星期幾
       //console.log(b.getDay())
       switch (days[b.getDay()]) {
         case "Wednesday":

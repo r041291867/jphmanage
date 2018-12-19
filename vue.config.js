@@ -4,7 +4,7 @@ function resolve (dir) {
 }
 
 module.exports = {
-  baseUrl: "/jphmanage/",
+  baseUrl: "/",
   /*css : {
     // extract CSS in components into a single CSS file (only in production)
     // can also be an object of options to pass to extract-text-webpack-plugin
